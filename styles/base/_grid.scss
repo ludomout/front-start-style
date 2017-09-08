@@ -1,0 +1,45 @@
+.row {
+  @include make-row;
+
+  &.no-gutter {
+    margin-right: 0;
+    margin-left : 0;
+  }
+}
+
+.no-gutter {
+  [class^='col'] {
+    padding-left : 0;
+    padding-right: 0;
+  }
+}
+@include make-grid-columns;
+@include make-grid(xs);
+@include MQ(small) {
+   @include make-grid(sm);
+}
+@include MQ(medium) {
+   @include make-grid(md);
+}
+@include MQ(large) {
+   @include make-grid(lg);
+}
+
+.container-fluid {
+  width: 100%;
+  @include container-fixed();
+}
+
+.container {
+  width: 100%;
+  @include container-fixed();
+  @include MQ(small) {
+    width: $container-tablet;
+  }
+  @include MQ(medium) {
+    width: $container-desktop;
+  }
+  @include MQ(large) {
+    width: 1176px;
+  }
+}
