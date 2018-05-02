@@ -1,4 +1,5 @@
 /*! minireset.css v0.0.2 | MIT License | github.com/jgthms/minireset.css */
+
 html,
 body,
 p,
@@ -55,7 +56,8 @@ html {
   box-sizing: inherit;
 }
 
-*:before, *:after {
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -83,6 +85,6 @@ th {
   text-align: left;
 }
 
-a{
+a {
   text-decoration: none;
 }

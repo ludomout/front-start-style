@@ -1,8 +1,7 @@
 // #https://github.com/LukyVj/family.scss
-
 /// Select all children from the first to `$num`.
 @mixin first($num) {
-   @if $num == 1{
+  @if $num==1 {
     &:first-child {
       @content;
     }
@@ -123,10 +122,9 @@
 /// This quantity-query mixin will select every items if there is at least `$num` items. It will not
 @mixin at-least($num) {
   $selector: &;
-  $child   : nth(nth($selector, -1), -1);
-
+  $child: nth(nth($selector, -1), -1);
   &:nth-last-child(n + #{$num}),
-  &:nth-last-child(n + #{$num}) ~ #{$child} {
+  &:nth-last-child(n + #{$num})~#{$child} {
     @content;
   }
 }
@@ -134,10 +132,9 @@
 /// This quantity-query mixin will select every items if there is at most `$num` items. It will not
 @mixin at-most($num) {
   $selector: &;
-  $child   : nth(nth($selector, -1), -1);
-
+  $child: nth(nth($selector, -1), -1);
   &:nth-last-child(-n + #{$num}):first-child,
-  &:nth-last-child(-n + #{$num}):first-child ~ #{$child} {
+  &:nth-last-child(-n + #{$num}):first-child~#{$child} {
     @content;
   }
 }
@@ -145,10 +142,9 @@
 /// This quantity-query mixin will select every items only if there is between `$min` and `$max` items.
 @mixin in-between($min, $max) {
   $selector: &;
-  $child   : nth(nth($selector, -1), -1);
-
+  $child: nth(nth($selector, -1), -1);
   &:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child,
-  &:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child ~ #{$child} {
+  &:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child~#{$child} {
     @content;
   }
 }
@@ -216,14 +212,14 @@
 /// This mixin is used to automatically sort z-index in numerical order. But it
 /// can also sort them in anti-numerical order, depending the parameters you use.
 @mixin child-index($num, $direction: 'forward', $index: 0) {
-   @for $i from 1 through $num{
-    @if ($direction == 'forward') {
+  @for $i from 1 through $num {
+    @if ($direction=='forward') {
       &:nth-child(#{$i}) {
         z-index: order-index($i, $index);
         @content;
       }
     }
-    @else if ($direction == 'backward') {
+    @else if ($direction=='backward') {
       &:nth-last-child(#{$i}) {
         z-index: order-index($i, $index);
         @content;
@@ -235,5 +231,5 @@
 /// Used by the child-index mixin. It will returned the proper sorted numbers
 /// depending on the `$index` value.
 @function order-index($i, $index) {
-   @return ($index + $i);
+  @return ($index + $i);
 }

@@ -1,28 +1,30 @@
 .row {
   @include make-row;
-
   &.no-gutter {
     margin-right: 0;
-    margin-left : 0;
+    margin-left: 0;
   }
 }
 
 .no-gutter {
   [class^='col'] {
-    padding-left : 0;
+    padding-left: 0;
     padding-right: 0;
   }
 }
+
 @include make-grid-columns;
 @include make-grid(xs);
 @include MQ(small) {
-   @include make-grid(sm);
+  @include make-grid(sm);
 }
+
 @include MQ(medium) {
-   @include make-grid(md);
+  @include make-grid(md);
 }
+
 @include MQ(large) {
-   @include make-grid(lg);
+  @include make-grid(lg);
 }
 
 .container-fluid {
