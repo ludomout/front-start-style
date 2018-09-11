@@ -1,15 +1,19 @@
 /* HELPERS */
-
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "helpers/family";
 @import "helpers/helpers";
-/* BASE */
+@import "helpers/ceaser";
 
+/* BASE */
 @import "base/reset";
 @import "base/grid";
 @import "base/base";
 @import "base/layout";
-/* FONTS */
 
+/* BASE */
+@import "components/header";
+@import "components/footer";
+
+/* FONTS */
 @import "base/fonts";
