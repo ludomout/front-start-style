@@ -1,0 +1,20 @@
+// Create blocks ((rounded)square / (rounded)rectangle , circle)
+@mixin size($width, $height: $width, $border-radius: null) {
+  width: $width;
+  height: $height;
+  @if ($border-radius !=null) {
+    border-radius: $border-radius;
+  }
+}
+
+@mixin circle($width, $height: $width) {
+  @include size($width, $height);
+  border-radius: 50%;
+}
+
+// Soft overflow
+@mixin overflow() {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}

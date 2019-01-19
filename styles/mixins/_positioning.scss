@@ -1,0 +1,47 @@
+// Positioning element
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  @if ($top==null) and ($right==null) and ($bottom==null) and ($left==null) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  } @else {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+}
+
+// Center element (absolute left/right, flex, block)
+@mixin center($xy: xy) {
+  @if $xy==xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+  } @else if $xy==x {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  } @else if $xy==y {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  } @else if $xy==flex {
+    justify-content: center;
+    align-items: center;
+  } @else if $xy==block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

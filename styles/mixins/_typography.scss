@@ -1,0 +1,23 @@
+// Fonts
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-size($size) {
+  @if unitless($size) {
+    $size: $size * 1px;
+  }
+  font-size: $size;
+  font-size: ($size / $base-font-size) * 1rem;
+}
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name+".woff2") format("woff2"),
+      url($file-name+".woff") format("woff");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

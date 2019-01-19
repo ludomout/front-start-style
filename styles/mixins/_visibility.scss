@@ -1,0 +1,13 @@
+// Show element
+@mixin visible {
+  opacity: 1;
+  pointer-events: initial;
+  visibility: visible;
+}
+
+// Hide element
+@mixin hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}

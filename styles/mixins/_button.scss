@@ -1,0 +1,21 @@
+// Create size buttons variants
+@mixin button-size($sizes) {
+  @each $type, $properties in $sizes {
+    .btn--#{$type} {
+      @each $prop, $value in $properties {
+        #{$prop}: $value;
+      }
+    }
+  }
+}
+
+// Create color buttons variants
+@mixin button-color($colors) {
+  @each $type, $properties in $colors {
+    .btn--#{$type} {
+      @each $prop, $value in $properties {
+        #{$prop}: $value;
+      }
+    }
+  }
+}

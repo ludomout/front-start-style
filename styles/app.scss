@@ -1,19 +1,6 @@
-/* HELPERS */
-@import "helpers/variables";
-@import "helpers/mixins";
-@import "helpers/family";
-@import "helpers/helpers";
-@import "helpers/ceaser";
-
-/* BASE */
-@import "base/reset";
-@import "base/grid";
-@import "base/base";
-@import "base/layout";
-
-/* BASE */
-@import "components/header";
-@import "components/footer";
-
-/* FONTS */
-@import "base/fonts";
+// Utilies
+@import "utilities/index";
+// Mixins
+@import "mixins/index";
+// Base
+@import "base/index";
